@@ -35,7 +35,8 @@ buttons.forEach(function(button){
 
 ## Project 2: BMI Calculator
 
-``` JavaScipt
+``` JavaScript
+
 const form = document.querySelector('form');
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -62,5 +63,4 @@ form.addEventListener('submit', function (e) {
     }
   }
 });
-
 ```
