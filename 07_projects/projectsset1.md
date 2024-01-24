@@ -1,7 +1,8 @@
 # Solution code
+
 ## project1
 
-``` JavaScript 
+```JavaScript
 
 const buttons = document.querySelectorAll('.button');
 const body = document.querySelector('body');
@@ -35,7 +36,7 @@ buttons.forEach(function(button){
 
 ## Project 2: BMI Calculator
 
-``` JavaScript
+```JavaScript
 
 const form = document.querySelector('form');
 form.addEventListener('submit', function (e) {
@@ -66,7 +67,8 @@ form.addEventListener('submit', function (e) {
 ```
 
 ## Project3: Digital Clock
-``` JavaScript 
+
+```JavaScript
 const clock = document.getElementById('clock');
 
 setInterval(function () {
@@ -77,9 +79,10 @@ setInterval(function () {
 }, 1000);
 
 ```
+
 ## Project4: Guess the Number Game
 
-``` JavaScript
+```JavaScript
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt');
@@ -175,3 +178,60 @@ function newGame() {
 
 ```
 
+## Project5: Keyboard
+
+```javascript
+const insert = document.querySelector("#insert");
+
+window.addEventListener("keydown", function (e) {
+  insert.innerHTML = `
+  <div class='color'>
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>KeyCode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === " " ? "space" : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+  <div/>`;
+});
+```
+
+## Project6: ChangeBg (setInterval)
+
+```Javascript
+// generate a random color
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalid;
+
+const startChangingColor = function () {
+  function changeBGColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+
+  if (!intervalid) {
+    intervalid = setInterval(changeBGColor, 1000);
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalid), (intervalid = null);
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+```
