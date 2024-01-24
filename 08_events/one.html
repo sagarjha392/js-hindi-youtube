@@ -39,7 +39,7 @@
             width="200px"
             id="owl"
             src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-            alt="" 
+            alt=""
           />
         </li>
         <li>
@@ -59,8 +59,50 @@
     </div>
   </body>
   <script>
-    document.getElementById('owl').onclick= ()=>{
-      alert('owl clicked')
-    }
+    // document.getElementById("owl").onclick = () => {
+    //   alert("owl clicked");
+    // };
+
+    // attachEvent()
+    // jQuery-on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Clicked inside the ul");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Owl Clicked ");
+    //     e.stopPropagation();
+    //   },
+    //   false
+    // );
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //   e.preventDefault()
+    //   e.stopPropagation()
+    //   console.log("clicked google");
+    // }, false)
+
+    document.querySelector("#images").addEventListener("click", (e) => {
+      console.log(e.target.parentNode);
+
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+    });
+    // removeIt.parentNode.removeChild(removeIt)
   </script>
 </html>
